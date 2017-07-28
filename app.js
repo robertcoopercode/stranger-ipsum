@@ -11,3 +11,6 @@ const server = http.createServer((request, response) => {
 });
 
 // Listen to port 3000
+server.listen("3000", () => {
+  console.log(`Server is listening at http://${hostname}:${port}/`);
+})
