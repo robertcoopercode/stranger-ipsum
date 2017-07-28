@@ -6,7 +6,7 @@ const loremIpsum = new GenerateNewText();
 // Constructor function creating the GenerateNewText object prototype
 function GenerateNewText() {
   // Add new properties to the prototype
-  this.words = ["technology", "Apple", "Samsung", "Nokia", "computer", "MacBook", "iOS", "Android", "iPhone", "Galaxy", "AirPods", "Apple Watch", "Magic Mouse", "Google", "Amazon", "AWS", "WordPress", "Node.js", "Angular.js", "Framework", "CSS", "HTML", "JavaScript", "SASS", "Treehouse", "Code Academy", "Coding"];
+  this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "node", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding"];
 }
 
 // Method that generates a random word
@@ -23,7 +23,9 @@ GenerateNewText.prototype.getSentence = function() {
   while (sentence.length < sentenceLength) {
     sentence.push(this.getRandomWord());
   }
+  // Convert array into string
   sentence = sentence.join(" ") + ". ";
+  sentence = sentence.replace(sentence.charAt(0), sentence.charAt(0).toUpperCase());
   return sentence;
 }
 
@@ -34,6 +36,7 @@ GenerateNewText.prototype.getParagraph = function() {
   while (paragraph.length < paragraphLength) {
     paragraph.push(this.getSentence());
   }
+  // Convert array into string
   paragraph = paragraph.join("");
   return paragraph;
 }
