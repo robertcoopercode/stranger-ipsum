@@ -41,4 +41,16 @@ GenerateNewText.prototype.getParagraph = function() {
   return paragraph;
 }
 
-console.log(loremIpsum.getParagraph());
+GenerateNewText.prototype.getAllParagraphs = function() {
+  let allParagraphs = [];
+  // Make total number of paragraphs between 3 and 5
+  let allParagraphsLength = Math.floor(Math.random() * 3) + 3
+  while (allParagraphs.length < allParagraphsLength) {
+    allParagraphs.push(this.getParagraph());
+  }
+  // Convert array into string
+  allParagraphs = allParagraphs.join("\n\n");
+  return allParagraphs;
+}
+
+console.log(loremIpsum.getAllParagraphs());
