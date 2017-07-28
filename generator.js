@@ -23,6 +23,7 @@ GenerateNewText.prototype.getSentence = function() {
   while (sentence.length < sentenceLength) {
     sentence.push(this.getRandomWord());
   }
+  sentence = sentence.join(" ") + ". ";
   return sentence;
 }
 
@@ -33,6 +34,7 @@ GenerateNewText.prototype.getParagraph = function() {
   while (paragraph.length < paragraphLength) {
     paragraph.push(this.getSentence());
   }
+  paragraph = paragraph.join("");
   return paragraph;
 }
 
