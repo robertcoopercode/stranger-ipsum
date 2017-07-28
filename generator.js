@@ -26,4 +26,14 @@ GenerateNewText.prototype.getSentence = function() {
   return sentence;
 }
 
-console.log(loremIpsum.getSentence().length);
+GenerateNewText.prototype.getParagraph = function() {
+  let paragraph = [];
+  // Make the length of the paragraph between 5 and 8 sentences long
+  let paragraphLength = Math.floor(Math.random() * 4) + 5
+  while (paragraph.length < paragraphLength) {
+    paragraph.push(this.getSentence());
+  }
+  return paragraph;
+}
+
+console.log(loremIpsum.getParagraph());
