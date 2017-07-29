@@ -1,4 +1,5 @@
 const generator = require("./generator.js");
+const renderer = require("./renderer.js");
 
 let commonHeaders = ['Content-Type', 'text/html'];
 
