@@ -53,4 +53,4 @@ GenerateNewText.prototype.getAllParagraphs = function() {
   return allParagraphs;
 }
 
-console.log(loremIpsum.getAllParagraphs());
+module.exports.loremIpsum = loremIpsum;
