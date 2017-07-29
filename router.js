@@ -8,7 +8,7 @@ function router(request, response) {
   if (request.url === "/" && request.method.toLowerCase() === "get") {
     response.setHeader(commonHeaders[0], commonHeaders[1]);
     // response.write(generator.loremIpsum.getAllParagraphs());
-    renderer.view("index", { "replace-this" : generator.loremIpsum.getAllParagraphs()}, response);
+    renderer.renderLoremIpsum("index", generator.loremIpsum.getAllParagraphs(), response);
     response.end();
   };
 }

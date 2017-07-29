@@ -48,9 +48,16 @@ GenerateNewText.prototype.getAllParagraphs = function() {
   while (allParagraphs.length < allParagraphsLength) {
     allParagraphs.push(this.getParagraph());
   }
-  // Convert array into string
-  allParagraphs = allParagraphs.join("\n\n");
-  return allParagraphs;
+  // Convert array into HTML string
+  let paragraphHTML = "";
+  allParagraphs.forEach(function (paragraph) {
+    paragraphHTML += "<p>" + paragraph + "</p>";
+  });
+  // allParagraphs = allParagraphs.join("\n\n");
+  // return allParagraphs;
+  return paragraphHTML;
 }
+
+loremIpsum.getAllParagraphs();
 
 module.exports.loremIpsum = loremIpsum;
