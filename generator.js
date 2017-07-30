@@ -37,7 +37,7 @@ GenerateNewText.prototype.getParagraph = function() {
     paragraph.push(this.getSentence());
   }
   // Convert array into string
-  // paragraph = paragraph.join("").replace(/.$/,"");
+  paragraph = paragraph.join("").replace(/.$/,"");
   return paragraph;
 }
 
