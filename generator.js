@@ -6,7 +6,7 @@ const loremIpsum = new GenerateNewText();
 // Constructor function creating the GenerateNewText object
 function GenerateNewText() {
   // Add property to the object
-  this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "node", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding"];
+  this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "nodejs", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding", "grunt", "react", "gulp", "coffeescript", "typescript", "conferences", "bootcamp", "developer", "front end", "back end", "full stack", "coffee", "office", "remote", "automation", "artificial intelligence", "agile", "scale", "buzzwords", "tech", "facebook"];
 }
 
 // Method that generates a random word
@@ -45,7 +45,7 @@ GenerateNewText.prototype.getParagraph = function() {
 // Method that gerates multiple paragraphs from paragraphs
 GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
   let allParagraphs = [];
-  // Generate the number of paragraphs as specified by the user 
+  // Generate the number of paragraphs as specified by the user
   while (allParagraphs.length < numberOfParagraphs) {
     allParagraphs.push(this.getParagraph());
   }
