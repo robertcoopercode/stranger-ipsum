@@ -15,7 +15,7 @@ GenerateNewText.prototype.getRandomWord = function() {
 	return randomWord;
 }
 
-// Method that generates a sentence
+// Method that generates a sentence from random words
 GenerateNewText.prototype.getSentence = function() {
   let sentence = [];
   // Make the length of the sentence between 8 and 12 words long
@@ -29,6 +29,7 @@ GenerateNewText.prototype.getSentence = function() {
   return sentence;
 }
 
+// Method that gerates a paragraph from sentences
 GenerateNewText.prototype.getParagraph = function() {
   let paragraph = [];
   // Make the length of the paragraph between 5 and 8 sentences long
@@ -41,6 +42,7 @@ GenerateNewText.prototype.getParagraph = function() {
   return paragraph;
 }
 
+// Method that gerates multiple paragraphs from paragraphs
 GenerateNewText.prototype.getAllParagraphs = function() {
   let allParagraphs = [];
   // Make total number of paragraphs between 3 and 5
@@ -53,11 +55,7 @@ GenerateNewText.prototype.getAllParagraphs = function() {
   allParagraphs.forEach(function (paragraph) {
     paragraphHTML += "<p>" + paragraph + "</p>";
   });
-  // allParagraphs = allParagraphs.join("\n\n");
-  // return allParagraphs;
   return paragraphHTML;
 }
-
-loremIpsum.getAllParagraphs();
 
 module.exports.loremIpsum = loremIpsum;
