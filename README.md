@@ -1,6 +1,6 @@
-# lorem-ipsum-generator
+# Lorem Ipsum Generator
 
-Built a lorem ipsum generator using NodeJS. Used knowledge gained from taking a course on Treehouse as well as code from another lorem ipsum generator (https://github.com/trohweder85/ipsum) as a basis for this app.
+Built a lorem ipsum generator using NodeJS. Used knowledge gained from taking a course on [Treehouse](https://teamtreehouse.com/) as well as code from another [lorem ipsum generator] (https://github.com/trohweder85/ipsum) as a basis for this app.
 
 ## How it works
 
