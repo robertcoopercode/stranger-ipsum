@@ -43,11 +43,10 @@ GenerateNewText.prototype.getParagraph = function() {
 }
 
 // Method that gerates multiple paragraphs from paragraphs
-GenerateNewText.prototype.getAllParagraphs = function() {
+GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
   let allParagraphs = [];
-  // Make total number of paragraphs between 3 and 5
-  let allParagraphsLength = Math.floor(Math.random() * 3) + 3
-  while (allParagraphs.length < allParagraphsLength) {
+  // Generate the number of paragraphs as specified by the user 
+  while (allParagraphs.length < numberOfParagraphs) {
     allParagraphs.push(this.getParagraph());
   }
   // Convert array into HTML string
