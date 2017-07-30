@@ -1,20 +1,25 @@
 // Problem: We need a way to generator paragraphs of random dummy text
-// Solution: Use Node.js to take the number of paragraphs as inputs and then serve our template via HTTP
+// Solution: Use Node.js to take the number of paragraphs as an input from
+// the user and then serve the result via HTTP
 
+// Require necessary modules
 const http = require('http');
 const router = require('./router.js');
-const generator = require('./generator.js');
+
+// Define the hostname and port where the server can be found
 const hostname = "127.0.0.1";
 const port = 3000;
 
 // Create a web server
 const server = http.createServer((request, response) => {
+  // If the server was created successfully, the statusCode will be set to 200
   response.statusCode = 200;
-  // console.log(generator.lorumIpsum.getAllParagraphs());)
+  // Serve the appropriate result by calling the router function inside the router module
   router.router(request, response);
 });
 
 // Listen to port 3000
 server.listen("3000", () => {
+  // Display server location information to the console 
   console.log(`Server is listening at http://${hostname}:${port}/`);
 })
