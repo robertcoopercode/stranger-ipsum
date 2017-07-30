@@ -24,6 +24,12 @@
       margin-bottom: 50px;
     }
 
+    hr {
+      border-color: #00171F;
+      width: 400px;
+      margin-bottom: 30px;
+    }
+
     label {
       display: block;
       font-weight: bold;
@@ -40,6 +46,10 @@
         color: #2C3238;
     }
 
+    input#numberOfParagraphs {
+      width: 100px;
+    }
+
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
@@ -50,11 +60,19 @@
       background-color: #003459;
       color: #FFF;
       border-width: 0px;
-      transition: ease 2s;
+      transition: ease .5s;
     }
 
     input[type=submit]:hover {
       background-color: #00A8E8;
+    }
+
+    .text-wrapper {
+      padding: 20px;
+      border-radius: 15px;
+      border: 5px #00171E solid;
+      color: #003459;
+      background-color: #FFF;
     }
 
     .text-wrapper p {
@@ -86,4 +104,9 @@
     }
 
   </style>
+  <script>
+    // console.log(document.getElementsByClassName("text-wrapper"));
+    // var innerContents = document.getElementsByClassName("text-wrapper")[0].innerHTML;
+    // console.log(innerContents.includes("<p>"));
+  </script>
 </head>
