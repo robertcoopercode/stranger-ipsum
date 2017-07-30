@@ -1,0 +1,10 @@
+<script>
+  console.log(document.getElementsByClassName("text-wrapper"));
+  var innerContents = document.getElementsByClassName("text-wrapper")[0].innerHTML;
+  console.log(!innerContents.includes("<p>"));
+  if (!innerContents.includes("<p>")) {
+    document.getElementsByClassName("text-wrapper")[0].style.display = "none";
+  };
+</script>
+</body>
+</html>

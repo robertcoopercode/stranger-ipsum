@@ -11,6 +11,7 @@ function router(request, response) {
       response.setHeader('Content-Type', 'text/html');
       renderer.view("header", response);
       renderer.view("index", response);
+      renderer.view("footer", response);
       response.end();
     } else {
     // Else the URL == "/" && POST
@@ -22,6 +23,7 @@ function router(request, response) {
         response.setHeader('Content-Type', 'text/html');
         renderer.view("header", response);
         renderer.renderLoremIpsum("index", loremIpsumText , response);
+        renderer.view("footer", response);
         response.end();
       });
     }
