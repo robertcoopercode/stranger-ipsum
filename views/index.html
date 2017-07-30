@@ -1,15 +1,16 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lorem Ipsum Generator</title>
-</head>
 <body>
+  <h1>Lorem Ipsum Generator</h1>
+  <p>
+     I've created this Lorem Ipsum text generator as a fun side project to get some practive with NodeJS. I used both the NodeJS course on <a href="https://teamtreehouse.com/" target="_blank">Treehouse</a> and another <a href="https://github.com/trohweder85/ipsum" target="_blank">Lorem Ipsum generator</a> as a guide on how to setup this app.
+  </p>
   <form action="/" method="POST">
-      <input type="number" placeholder="Enter the number of pargraphs you'd like to generate" id="numberOfParagraphs" name="numberOfParagraphs">
-      <input type="submit" value="generate" class="button">
+    <label for="numberOfParagraphs">Enter number of paragraphs to generate:</label>
+    <input type="number" id="numberOfParagraphs" name="numberOfParagraphs">
+
+    <input type="submit" value="generate" class="button">
   </form>
-  <div class='lorem-ipsum-container'></div>
+  <div class="text-wrapper">
+    <div class='lorem-ipsum-container'></div>
+  </div>
 </body>
 </html>
