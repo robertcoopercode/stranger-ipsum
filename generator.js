@@ -1,6 +1,6 @@
 // Code that generators the random lorem ipsum text
 
-// Create a new lorem ipsum generator variable
+// Create a new object called loremIpsum by invoking the GenerateNewText constructor function 
 const loremIpsum = new GenerateNewText();
 
 // Constructor function that creates an object with the words property
