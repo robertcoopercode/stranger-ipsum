@@ -3,19 +3,19 @@
 // Create a new lorem ipsum generator variable
 const loremIpsum = new GenerateNewText();
 
-// Constructor function creating the GenerateNewText object
+// Constructor function that creates an object with the words property
 function GenerateNewText() {
   // Add property to the object
   this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "nodejs", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding", "grunt", "react", "gulp", "coffeescript", "typescript", "conferences", "bootcamp", "developer", "front end", "back end", "full stack", "coffee", "office", "remote", "automation", "artificial intelligence", "agile", "scale", "buzzwords", "tech", "facebook"];
 }
 
-// Method that generates a random word
+// Method to the GenerateNewText constructor function that generates a random word
 GenerateNewText.prototype.getRandomWord = function() {
   let randomWord = this.words[Math.floor(Math.random() * this.words.length)]
 	return randomWord;
 }
 
-// Method that generates a sentence from random words
+// Method to the GenerateNewText constructor function that generates a sentence from random words
 GenerateNewText.prototype.getSentence = function() {
   let sentence = [];
   // Make the length of the sentence between 8 and 12 words long
@@ -29,7 +29,7 @@ GenerateNewText.prototype.getSentence = function() {
   return sentence;
 }
 
-// Method that gerates a paragraph from sentences
+// Method to the GenerateNewText constructor function that generates a paragraph from sentences
 GenerateNewText.prototype.getParagraph = function() {
   let paragraph = [];
   // Make the length of the paragraph between 5 and 8 sentences long
@@ -42,7 +42,7 @@ GenerateNewText.prototype.getParagraph = function() {
   return paragraph;
 }
 
-// Method that gerates multiple paragraphs from paragraphs
+// Method to the GenerateNewText constructor function that gerates multiple paragraphs from paragraphs
 GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
   let allParagraphs = [];
   // Generate the number of paragraphs as specified by the user
