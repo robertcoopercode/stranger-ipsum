@@ -1,11 +1,11 @@
-// Code that generators the random lorum ipsum text
+// Code that generators the random lorem ipsum text
 
 // Create a new lorem ipsum generator variable
 const loremIpsum = new GenerateNewText();
 
-// Constructor function creating the GenerateNewText object prototype
+// Constructor function creating the GenerateNewText object
 function GenerateNewText() {
-  // Add new properties to the prototype
+  // Add property to the object
   this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "node", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding"];
 }
 
@@ -37,7 +37,7 @@ GenerateNewText.prototype.getParagraph = function() {
     paragraph.push(this.getSentence());
   }
   // Convert array into string
-  paragraph = paragraph.join("");
+  // paragraph = paragraph.join("").replace(/.$/,"");
   return paragraph;
 }
 
