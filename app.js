@@ -8,7 +8,7 @@ const router = require('./router.js');
 
 // Define the hostname and port where the server can be found
 const hostname = "127.0.0.1";
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Create a web server
 const server = http.createServer((request, response) => {
@@ -18,8 +18,8 @@ const server = http.createServer((request, response) => {
   router.router(request, response);
 });
 
-// Listen to port 3000
-server.listen("3000", () => {
-  // Display server location information to the console 
+// Listen to port that is being used
+server.listen(port, () => {
+  // Display server location information to the console
   console.log(`Server is listening at http://${hostname}:${port}/`);
 })
