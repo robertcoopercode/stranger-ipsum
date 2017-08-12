@@ -8,12 +8,6 @@ function router(request, response) {
   if (request.url === "/") {
     // If URL == "/" && GET
     if (request.method.toLowerCase() === "get") {
-      // let pathname = url.parse(request.url).pathname;
-      // if (pathname === "/favicon.ico") {
-      //   response.setHeader('Content-Type', 'image/x-icon');
-      //   fs.createReadStream(FAVICON).pipe(response);
-      //   return;
-      // }
       response.setHeader('Content-Type', 'text/html');
       renderer.view("header", response);
       renderer.view("index", response);
