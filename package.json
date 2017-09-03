@@ -1,6 +1,6 @@
 {
   "name": "lorem-ipsum-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lorem ipsum generator created using NodeJS",
   "main": "app.js",
   "scripts": {},

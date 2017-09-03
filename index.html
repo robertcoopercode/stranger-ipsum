@@ -4,25 +4,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lorem Ipsum Generator</title>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,300i" rel="stylesheet">
   <style>
 
   @import url(https://fonts.googleapis.com/css?family=Varela+Round);
   @import url(https://necolas.github.io/normalize.css/3.0.2/normalize.css);
 
+  h1, h2, h3 { font-family: 'Lato', sans-serif; }
+
   body {
-    background: #eeeeee;
+    /*background: #eeeeee;*/
     text-align: center;
     margin: 100px auto;
     max-width: 800px;
     padding: 0 40px;
-    font: 18px normal 'Varela Round', Helvetica, serif;
+    font-family: , sans-serif;
+    font: 16px 'Open Sans', sans-serif;
     color: #00171F;
   }
 
+  p {
+    text-align: left;
+  }
+
   form {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   hr {
@@ -38,17 +46,21 @@
 
   input {
     font-family: 'Varela Round', Helvetica, serif;
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 16px;
+    padding: 5px;
     margin: 10px 0;
     text-align: center;
-    border-radius: 4px;
     border: 1px solid #D5DDE4;
     color: #2C3238;
   }
 
+  input[type='submit'] {
+    padding: 6px 12px;
+  }
+
   input#numberOfParagraphs {
-    width: 100px;
+    max-width: 80px;
+    margin-right: 10px;
   }
 
   input[type=number]::-webkit-inner-spin-button,
@@ -70,15 +82,22 @@
 
   .text-wrapper {
     padding: 20px;
-    border-radius: 15px;
-    border: 5px #00171E solid;
-    color: #003459;
+    color: #313131;
     background-color: #FFF;
+    box-shadow: #d8d8d8 0px 0px 20px;
   }
 
   .text-wrapper p {
     text-align: left;
     animation: fadein 2s;
+  }
+
+  .text-wrapper p:first-child {
+    margin-top: 0;
+  }
+
+  .text-wrapper p:last-child {
+    margin-bottom: 0;
   }
 
   @@keyframes fadein {
@@ -108,12 +127,11 @@
 </head>
 <body>
   <h1>Lorem Ipsum Generator</h1>
-  <hr />
   <p>
     Specify the number of paragraphs of text you would like to have returned. The words used in this lorem ipsum generator are all technology/web development related.
   </p>
   <form action="/" method="POST">
-    <label for="numberOfParagraphs">Enter number of paragraphs to generate:</label>
+    <label for="numberOfParagraphs">Enter number of paragraphs to generate.</label>
     <input type="number" id="numberOfParagraphs" name="numberOfParagraphs">
     <input type="submit" value="generate" class="button">
   </form>
