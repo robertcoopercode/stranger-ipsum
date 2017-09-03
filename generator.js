@@ -1,12 +1,12 @@
 // Code that generators the random lorem ipsum text
 
-// Create a new object called loremIpsum by invoking the GenerateNewText constructor function 
+// Create a new object called loremIpsum by invoking the GenerateNewText constructor function
 const loremIpsum = new GenerateNewText();
 
 // Constructor function that creates an object with the words property
 function GenerateNewText() {
   // Add property to the object
-  this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "nodejs", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding", "grunt", "react", "gulp", "coffeescript", "typescript", "conferences", "bootcamp", "developer", "front end", "back end", "full stack", "coffee", "office", "remote", "automation", "artificial intelligence", "agile", "scale", "buzzwords", "tech", "facebook"];
+  this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "nodejs", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding", "grunt", "react", "gulp", "coffeescript", "typescript", "conferences", "bootcamp", "developer", "front end", "back end", "full stack", "coffee", "office", "remote", "automation", "artificial intelligence", "agile", "scale", "buzzwords", "tech", "facebook", "firebase", "go", "lorem ipsum", "callback", "function", "variable", "parameter", "argument", "promise", "ajax", "promise", "query", "get request", "post request"];
 }
 
 // Method to the GenerateNewText constructor function that generates a random word

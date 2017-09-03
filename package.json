@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "A lorem ipsum generator created using NodeJS",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Engineering-Robert/lorem-ipsum-generator.git"
@@ -23,5 +21,8 @@
   "dependencies": {},
   "engines": {
     "node": "8.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

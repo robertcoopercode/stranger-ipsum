@@ -1,7 +1,7 @@
 // Require the necessary modules
 const generator = require("./generator.js");
-const renderer = require("./renderer.js");
 const querystring = require("querystring");
+const fs = require("fs");
 
 function router(request, response) {
 
@@ -9,9 +9,8 @@ function router(request, response) {
     // If URL == "/" && GET
     if (request.method.toLowerCase() === "get") {
       response.setHeader('Content-Type', 'text/html');
-      renderer.view("header", response);
-      renderer.view("index", response);
-      renderer.view("footer", response);
+      let fileContents = fs.readFileSync("./index.html", {encoding: "utf8"});
+      response.write(fileContents);
       response.end();
     } else {
     // Else the URL == "/" && POST
@@ -20,10 +19,10 @@ function router(request, response) {
         let query = inputValue.toString();
         let numberOfParagraphs = querystring.parse(query).numberOfParagraphs;
         let loremIpsumText = generator.loremIpsum.getAllParagraphs(numberOfParagraphs);
+        let fileContents = fs.readFileSync("./index.html", {encoding: "utf8"});
+        fileContents = fileContents.replace("<div class='lorem-ipsum-container'></div>",loremIpsumText);;
         response.setHeader('Content-Type', 'text/html');
-        renderer.view("header", response);
-        renderer.renderLoremIpsum("index", loremIpsumText , response);
-        renderer.view("footer", response);
+        response.write(fileContents);
         response.end();
       });
     }
