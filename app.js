@@ -16,7 +16,6 @@ const server = http.createServer((request, response) => {
   response.statusCode = 200;
   // Serve the appropriate result by calling the router function inside the router module
   router.router(request, response);
-
 });
 
 // Begin accepting connections to the specified port

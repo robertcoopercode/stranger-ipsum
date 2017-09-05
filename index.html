@@ -4,28 +4,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lorem Ipsum Generator</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,300i" rel="stylesheet">
   <style>
 
   @import url(https://fonts.googleapis.com/css?family=Varela+Round);
   @import url(https://necolas.github.io/normalize.css/3.0.2/normalize.css);
 
-  h1, h2, h3 { font-family: 'Lato', sans-serif; }
+  h1, h2, h3 {
+    font-family: 'Lato', sans-serif;
+    color: #00A8E8;
+  }
 
   body {
-    /*background: #eeeeee;*/
+    background: #00171F;
+    color: #fff;
     text-align: center;
     margin: 100px auto;
     max-width: 800px;
     padding: 0 40px;
     font-family: , sans-serif;
     font: 16px 'Open Sans', sans-serif;
-    color: #00171F;
   }
 
   p {
-    text-align: left;
+    font-size: 20px;
   }
 
   form {
@@ -50,12 +53,8 @@
     padding: 5px;
     margin: 10px 0;
     text-align: center;
-    border: 1px solid #D5DDE4;
+    border: 1px solid #fff;
     color: #2C3238;
-  }
-
-  input[type='submit'] {
-    padding: 6px 12px;
   }
 
   input#numberOfParagraphs {
@@ -69,15 +68,29 @@
     margin: 0;
   }
 
-  input[type=submit] {
-    background-color: #003459;
-    color: #FFF;
+  .button {
     border-width: 0px;
-    transition: ease .5s;
+    padding: 6px 12px;
+  }
+
+  input[type=submit] {
+    background-color: #00A8E8;
+    color: #FFF;
   }
 
   input[type=submit]:hover {
-    background-color: #00A8E8;
+    background-color: #fff;
+    color: #00A8E8;
+  }
+
+  a.button {
+    display: inline-block;
+    text-decoration: none;
+    background: #003459;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: -20px;
   }
 
   .text-wrapper {
@@ -88,6 +101,7 @@
   }
 
   .text-wrapper p {
+    font-size: 16px;
     text-align: left;
     animation: fadein 2s;
   }
@@ -123,6 +137,25 @@
     to   { opacity: 1; }
   }
 
+  #copyOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.45);
+    width: 100vw;
+    left: 0;
+    height: 100vh;
+  }
+
+  #copyText {
+    margin-top: 40vh;
+  }
+
+  #copyText p {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
   </style>
 </head>
 <body>
@@ -131,18 +164,36 @@
     Specify the number of paragraphs of text you would like to have returned. The words used in this lorem ipsum generator are all technology/web development related.
   </p>
   <form action="/" method="POST">
-    <label for="numberOfParagraphs">Enter number of paragraphs to generate.</label>
     <input type="number" id="numberOfParagraphs" name="numberOfParagraphs">
-    <input type="submit" value="generate" class="button">
+    <input type="submit" value="Generate" class="button">
   </form>
-  <div class="text-wrapper">
+  <a href="#" class='button' data-clipboard-target="#targetText">Copy Text</a>
+  <div class="text-wrapper" id="targetText">
     <div class='lorem-ipsum-container'></div>
   </div>
+  <div id="copyOverlay">
+    <div id="copyText">
+      <p>The text has been copied!</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <script>
   var innerContents = document.getElementsByClassName("text-wrapper")[0].innerHTML;
   if (!innerContents.includes("<p>")) {
+    $('a.button').hide();
     document.getElementsByClassName("text-wrapper")[0].style.display = "none";
   };
+  var clip = new Clipboard('.button');
+  clip.on('success', function(e) {
+    console.log("Yay!");
+    $('#copyOverlay').show();
+    $('#copyOverlay').fadeOut(2000);
+    e.clearSelection();
+  });
   </script>
 </body>
 </html>
