@@ -3,11 +3,25 @@ const generator = require("./generator.js");
 const querystring = require("querystring");
 const fs = require("fs");
 
+const path = require('path');
+
+// Location of your favicon in the filesystem.
+const FAVICON = path.join(__dirname, 'favicon.ico');
+
 function router(request, response) {
+
+  // Load the Favicon
+  if (request.method.toLowerCase() === "get" && request.url === '/favicon.ico') {
+    response.setHeader('Content-Type', 'image/x-icon');
+    let fileContents = fs.readFileSync(FAVICON);
+    console.log("Favicon yo");
+    response.write(fileContents, {encoding: "utf8"});
+    response.end();
+  }
 
   if (request.url === "/") {
     // If URL == "/" && GET
-    if (request.method.toLowerCase() === "get") {
+      if (request.method.toLowerCase() === "get") {
       response.setHeader('Content-Type', 'text/html');
       let fileContents = fs.readFileSync("./index.html", {encoding: "utf8"});
       response.write(fileContents);
