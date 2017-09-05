@@ -189,7 +189,6 @@
   };
   var clip = new Clipboard('.button');
   clip.on('success', function(e) {
-    console.log("Yay!");
     $('#copyOverlay').show();
     $('#copyOverlay').fadeOut(2000);
     e.clearSelection();
