@@ -14,7 +14,6 @@ function router(request, response) {
   if (request.method.toLowerCase() === "get" && request.url === '/favicon.ico') {
     response.setHeader('Content-Type', 'image/x-icon');
     let fileContents = fs.readFileSync(FAVICON);
-    console.log("Favicon yo");
     response.write(fileContents, {encoding: "utf8"});
     response.end();
   }
@@ -34,7 +33,7 @@ function router(request, response) {
         let numberOfParagraphs = querystring.parse(query).numberOfParagraphs;
         let loremIpsumText = generator.loremIpsum.getAllParagraphs(numberOfParagraphs);
         let fileContents = fs.readFileSync("./index.html", {encoding: "utf8"});
-        fileContents = fileContents.replace("<div class='lorem-ipsum-container'></div>",loremIpsumText);;
+        fileContents = fileContents.replace("<div class='placeholder-div'></div>",loremIpsumText);;
         response.setHeader('Content-Type', 'text/html');
         response.write(fileContents);
         response.end();

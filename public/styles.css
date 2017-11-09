@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,700);
+@import url(https://necolas.github.io/normalize.css/3.0.2/normalize.css);
+
+body {
+  color: #0D0630;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 0 40px;
+  font: 16px 'Open Sans', sans-serif;
+}
+
+.description {
+  font-family: 'Poppins';
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 16px;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 20px;
+}
+
+form {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+hr {
+  border-color: #00171F;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px 0;
+  text-align: center;
+  border: 1px solid #fff;
+  color: #2C3238;
+}
+
+.video-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.video-container video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  z-index: 10;
+}
+
+.title img {
+  max-width: 100%;
+  width: 500px;
+}
+
+.paragraph-number {
+  max-width: 80px;
+  margin: 0;
+  margin-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 37px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.generate-button,
+.copy-button {
+  font-family: 'Poppins', Helvetica, serif;
+  border-width: 0px;
+  padding: 6px 12px;
+  background-color: #f61b1b;
+  color: #fff;
+  transition: background-color 1s, color 1s;
+}
+
+.generate-button:hover,
+.copy-button:hover {
+  background-color: #000;
+  color: #f61b1b;
+}
+
+.copy-button {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.text-wrapper {
+  padding: 20px;
+  color: #313131;
+  background-color: #fff;
+  box-shadow: #fff 0px 0px 5px 4px;
+}
+
+.text-wrapper p {
+  font-size: 16px;
+  text-align: left;
+  animation: fadein 2s;
+}
+
+.text-wrapper p:first-child {
+  margin-top: 0;
+}
+
+.text-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#copyOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+#copyText {
+  margin-top: 40vh;
+}
+
+#copyText p {
+  font-size: 30px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  color: #fff;
+}

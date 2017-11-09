@@ -1,7 +1,7 @@
 {
   "name": "lorem-ipsum-generator",
   "version": "1.0.1",
-  "description": "A lorem ipsum generator created using NodeJS",
+  "description": "A lorem ipsum generator",
   "main": "app.js",
   "scripts": {},
   "repository": {
@@ -9,8 +9,9 @@
     "url": "git+https://github.com/Engineering-Robert/lorem-ipsum-generator.git"
   },
   "keywords": [
-    "NodeJS",
-    "heroku"
+    "lorem ipsum",
+    "text",
+    "random words"
   ],
   "author": "Robert Cooper",
   "license": "MIT",
@@ -18,7 +19,9 @@
     "url": "https://github.com/Engineering-Robert/lorem-ipsum-generator/issues"
   },
   "homepage": "https://github.com/Engineering-Robert/lorem-ipsum-generator#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.2"
+  },
   "engines": {
     "node": "8.2.1"
   },
