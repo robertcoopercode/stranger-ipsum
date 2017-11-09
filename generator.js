@@ -6,39 +6,61 @@ const loremIpsum = new GenerateNewText();
 // Constructor function that creates an object with the words property
 function GenerateNewText() {
   // Add property to the object
-  this.words = ["technology", "apple", "samsung", "nokia", "computer", "macbook", "ios", "android", "iphone", "galaxy", "airpods", "apple watch", "magic mouse", "google", "amazon", "aws", "wordpress", "nodejs", "angular", "framework", "css", "html", "javascript", "sass", "treehouse", "code academy", "coding", "grunt", "react", "gulp", "coffeescript", "typescript", "conferences", "bootcamp", "developer", "front end", "back end", "full stack", "coffee", "office", "remote", "automation", "artificial intelligence", "agile", "scale", "buzzwords", "tech", "facebook", "firebase", "go", "lorem ipsum", "callback", "function", "variable", "parameter", "argument", "promise", "ajax", "promise", "query", "get request", "post request"];
+  this.sentences =
+    [
+      "Friends don't lie.",
+      "It's just, sometimes... people don't really say what they're really thinking. But when you capture the right moment, it says more.",
+      "This is not yours to fix alone. You act like you’re all alone out there in the world, but you’re not. You’re not alone.",
+      "Why are you keeping this curiosity door lock?",
+      "Do you know anything about sensory deprivation tanks? Specifically how to build one?",
+      "If anyone asks where I am, I've left the country.",
+      "YOU BETTER RUN! She's our friend, and she's crazy!",
+      "Mouth-breather.",
+      "Nancy, seriously, you're gonna be so cool now, it's ridiculous.",
+      "Um, I'm happy you're home.",
+      "You’re going to take out the demigorgon with a slingshot?",
+      "Mornings are for coffee and contemplation.",
+      "You shouldn't like things because people tell you you're supposed to.",
+      "No... no El, you're not the monster. You saved me. Do you understand? You saved me.",
+      "We never would've upset you if we knew you had superpowers.",
+      "Just wait till we tell Will that Jennifer Hayes was crying at his funeral.",
+      "You're an idiot, Steve Harrington. You're beautiful, Nancy Wheeler.",
+      "Oh... candy, leftovers, Eggo's... she really likes Eggo's.",
+      "Don’t take it so personally, okay? I don’t like most people. He’s in the vast majority.",
+      "Why do we even need weapons anyway? We have her.",
+      "She shut one door! With her mind!",
+      "He’s a sensitive kid. Lonnie used to say he was queer. Called him a fag. Is he? He’s missing, is what he is!",
+      "Yeah, I want a date with Bo Derek. We all want things.",
+      "It’s finger-lickin’ good.",
+      "You’re going to be home by 8, listening to the Talking Heads and reading Vonnegut or something. That sounds like a nice night.",
+      "You’re right. You are a freak…. Who would you rather be friends with: Bowie or Kenny Rogers?",
+      "Nobody normal ever accomplished anything meaningful in this world.",
+      "You are such a nerd. No wonder you only hang out with boys.",
+      "If we’re both going crazy, then we’ll go crazy together, right?",
+      "You’re pretty cute, you know that?", "I need my paddles!", "Why’s he gotta kick the door?", "Hey kiddo, would you like a balloon?", "Mistakes have been made.", "Let’s burn that lab to the ground.", "You act like you want me to be your friend and then you treat me like garbage.", "It’s about the shadow monster, isn’t it?"
+   ];
 }
 
-// Method to the GenerateNewText constructor function that generates a random word
-GenerateNewText.prototype.getRandomWord = function() {
-  let randomWord = this.words[Math.floor(Math.random() * this.words.length)]
-	return randomWord;
+// Method to the GenerateNewText constructor function that generates a random sentence
+GenerateNewText.prototype.getRandomSentence = function() {
+  let randomSentence = this.sentences[Math.floor(Math.random() * this.sentences.length)]
+	return randomSentence;
 }
 
-// Method to the GenerateNewText constructor function that generates a sentence from random words
-GenerateNewText.prototype.getSentence = function() {
-  let sentence = [];
-  // Make the length of the sentence between 8 and 12 words long
-  let sentenceLength = Math.floor(Math.random() * 5) + 8
-  while (sentence.length < sentenceLength) {
-    sentence.push(this.getRandomWord());
-  }
-  // Convert array into string
-  sentence = sentence.join(" ") + ". ";
-  sentence = sentence.replace(sentence.charAt(0), sentence.charAt(0).toUpperCase());
-  return sentence;
-}
-
-// Method to the GenerateNewText constructor function that generates a paragraph from sentences
+// Method to the GenerateNewText constructor function that generates a paragraph from random sentences
 GenerateNewText.prototype.getParagraph = function() {
-  let paragraph = [];
-  // Make the length of the paragraph between 5 and 8 sentences long
-  let paragraphLength = Math.floor(Math.random() * 4) + 5
-  while (paragraph.length < paragraphLength) {
-    paragraph.push(this.getSentence());
+  let paragraph = "";
+  // Set the minimum number of words
+  let minimumCharacterLength = 250;
+  let firstSentence = true;
+  while (paragraph.length < minimumCharacterLength) {
+    if (firstSentence) {
+      paragraph = paragraph.concat(this.getRandomSentence());
+      firstSentence = false;
+    } else {
+      paragraph = paragraph.concat(" " + this.getRandomSentence());
+    }
   }
-  // Convert array into string
-  paragraph = paragraph.join("").replace(/.$/,"");
   return paragraph;
 }
 
@@ -56,5 +78,7 @@ GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
   });
   return paragraphHTML;
 }
+
+// loremIpsum.getAllParagraphs(3);
 
 module.exports.loremIpsum = loremIpsum;
