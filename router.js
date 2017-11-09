@@ -22,7 +22,7 @@ function router(request, response) {
     // If URL == "/" && GET
       if (request.method.toLowerCase() === "get") {
       response.setHeader('Content-Type', 'text/html');
-      let fileContents = fs.readFileSync("./index.html", {encoding: "utf8"});
+      let fileContents = fs.readFileSync("./public/index.html", {encoding: "utf8"});
       response.write(fileContents);
       response.end();
     } else {
@@ -32,7 +32,7 @@ function router(request, response) {
         let query = inputValue.toString();
         let numberOfParagraphs = querystring.parse(query).numberOfParagraphs;
         let loremIpsumText = generator.loremIpsum.getAllParagraphs(numberOfParagraphs);
-        let fileContents = fs.readFileSync("./index.html", {encoding: "utf8"});
+        let fileContents = fs.readFileSync("./public/index.html", {encoding: "utf8"});
         fileContents = fileContents.replace("<div class='placeholder-div'></div>",loremIpsumText);;
         response.setHeader('Content-Type', 'text/html');
         response.write(fileContents);
