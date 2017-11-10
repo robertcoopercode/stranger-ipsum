@@ -37,7 +37,9 @@ function GenerateNewText() {
       "Nobody normal ever accomplished anything meaningful in this world.",
       "You are such a nerd. No wonder you only hang out with boys.",
       "If we’re both going crazy, then we’ll go crazy together, right?",
-      "You’re pretty cute, you know that?", "I need my paddles!", "Why’s he gotta kick the door?", "Hey kiddo, would you like a balloon?", "Mistakes have been made.", "Let’s burn that lab to the ground.", "You act like you want me to be your friend and then you treat me like garbage.", "It’s about the shadow monster, isn’t it?"
+      "You’re pretty cute, you know that?", "I need my paddles!", "Why’s he gotta kick the door?", "Hey kiddo, would you like a balloon?", "Mistakes have been made.", "Let’s burn that lab to the ground.", "You act like you want me to be your friend and then you treat me like garbage.", "It’s about the shadow monster, isn’t it?",
+      "So, Jonathan, how was the pull-out?",
+      "Bitchin'"
    ];
 }
 
@@ -78,7 +80,5 @@ GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
   });
   return paragraphHTML;
 }
-
-// loremIpsum.getAllParagraphs(3);
 
 module.exports.loremIpsum = loremIpsum;
