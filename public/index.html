@@ -9,23 +9,23 @@
 </head>
 <body>
   <div class="video-container">
-    <video preload="auto" autoplay="" loop="" muted="">
+    <video class="video-background" preload="auto" autoplay="" loop="" muted="">
       <source src="https://player.vimeo.com/external/178812339.hd.mp4?s=bf1db383854643d8d92aac96a5bca01802122d46&amp;profile_id=174" type="video/mp4">
     </video>
   </div>
-  <div class="content">
+  <div class="main-content">
     <h1 class="title">
-      <img src="stranger-ipsum-title.png" alt="Stranger Ipsum"/>
+      <img class="title-image" src="stranger-ipsum-title.png" alt="Stranger Ipsum"/>
     </h1>
     <p class="description">
-      Specify the number of paragraphs of text you would like to generate. All sentences are quotes pulled from the Stranger Things Netflix series.
+      Specify the number of paragraphs of text you would like to generate. All sentences are quotes pulled from the Stranger Things Netflix series (Seasons 1 & 2).
     </p>
     <form action="/" method="POST">
       <input type="number" class="paragraph-number" name="numberOfParagraphs">
       <input type="submit" value="Generate" class="generate-button">
     </form>
     <a href="javascript:void(0)" class='copy-button' data-clipboard-target="#targetText">Copy Text</a>
-    <div class="text-wrapper" id="targetText">
+    <div class="generated-text" id="targetText">
       <div class='placeholder-div'></div>
     </div>
     <a class="github-button" href="https://github.com/engineering-robert/stranger-ipsum" data-icon="octicon-star" data-show-count="true" aria-label="Star engineering-robert/stranger-ipsum on GitHub">Star</a>

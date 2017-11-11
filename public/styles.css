@@ -11,16 +11,6 @@ body {
   font: 16px 'Open Sans', sans-serif;
 }
 
-.description {
-  font-family: 'Poppins';
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 16px;
-  word-spacing: 3px;
-  letter-spacing: 1px;
-}
-
 p {
   font-size: 20px;
 }
@@ -50,6 +40,16 @@ input {
   color: #2C3238;
 }
 
+input:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .video-container {
   position: absolute;
   left: 0;
@@ -59,7 +59,7 @@ input {
   z-index: -1;
 }
 
-.video-container video {
+.video-background {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -70,13 +70,25 @@ input {
   transform: translate(-50%, -50%);
 }
 
-.content {
+.main-content {
   z-index: 10;
 }
 
-.title img {
+.title-image {
   max-width: 100%;
   width: 500px;
+  box-shadow: 0px 0px 40px 20px #000;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-family: 'Poppins';
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 16px;
+  word-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 .paragraph-number {
@@ -86,12 +98,11 @@ input {
   padding-top: 6px;
   padding-bottom: 6px;
   height: 37px;
+  transition: box-shadow 1s;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.paragraph-number:focus {
+  box-shadow: 0px 0px 50px 5px #f61b1b;
 }
 
 .generate-button,
@@ -101,40 +112,45 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 6px 12px;
   background-color: #f61b1b;
   color: #fff;
-  transition: background-color 1s, color 1s;
+  transition: background-color 1s, color 1s, box-shadow 1s;
 }
 
 .generate-button:hover,
-.copy-button:hover {
+.copy-button:hover,
+.generate-button:focus,
+.copy-button:focus {
   background-color: #000;
   color: #f61b1b;
+  box-shadow: 0px 0px 50px 5px #f61b1b;
+  outline: none;
 }
 
 .copy-button {
   display: inline-block;
   text-decoration: none;
-  margin-bottom: 20px;
   margin-top: -20px;
 }
 
-.text-wrapper {
+.generated-text {
   padding: 20px;
   color: #313131;
   background-color: #fff;
   box-shadow: #fff 0px 0px 5px 4px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.text-wrapper p {
+.generated-text p {
   font-size: 16px;
   text-align: left;
   animation: fadein 2s;
 }
 
-.text-wrapper p:first-child {
+.generated-text p:first-child {
   margin-top: 0;
 }
 
-.text-wrapper p:last-child {
+.generated-text p:last-child {
   margin-bottom: 0;
 }
 
