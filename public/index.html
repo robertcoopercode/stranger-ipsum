@@ -43,10 +43,10 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script>
-    var innerContents = document.getElementsByClassName("text-wrapper")[0].innerHTML;
+    var innerContents = document.getElementsByClassName("generated-text")[0].innerHTML;
     if (!innerContents.includes("<p>")) {
       $('.copy-button').hide();
-      document.getElementsByClassName("text-wrapper")[0].style.display = "none";
+      document.getElementsByClassName("generated-text")[0].style.display = "none";
     };
     var clip = new Clipboard('.copy-button');
     clip.on('success', function(e) {
