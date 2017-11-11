@@ -12,7 +12,6 @@ Begin by running app.js in your terminal with the command `node app.js` and then
 
 In order to update the live application on Heroku, the command `git push heroku master` must be executed inside of the project folder.
 
-
 ## Credits
 - Used this [lorem ipsum generator](https://github.com/trohweder85/ipsum) to help with some of the JavaScript required to select random sentences.
 - Got the "Stranger Ipsum" font as well as the background video from [makeitstranger.com](http://makeitstranger.com/)
