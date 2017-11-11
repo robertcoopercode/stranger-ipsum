@@ -1,5 +1,5 @@
 // Require the necessary modules
-const generator = require("./generator.js");
+const loremIpsum = require("./generator.js");
 const querystring = require("querystring");
 const fs = require("fs");
 const path = require('path');
@@ -8,7 +8,7 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
-// Location of the favicon in our directory 
+// Location of the favicon in our directory
 const FAVICON = path.join(__dirname, 'favicon.ico');
 
 router.get('/favicon.ico', (request, response) => {
@@ -29,7 +29,7 @@ router.post('/', (request, response) => {
   request.on("data", function(inputValue) {
     let query = inputValue.toString();
     let numberOfParagraphs = querystring.parse(query).numberOfParagraphs;
-    let loremIpsumText = generator.loremIpsum.getAllParagraphs(numberOfParagraphs);
+    let loremIpsumText = loremIpsum.getAllParagraphs(numberOfParagraphs);
     let fileContents = fs.readFileSync("./public/index.html", {encoding: "utf8"});
     fileContents = fileContents.replace("<div class='placeholder-div'></div>",loremIpsumText);;
     response.setHeader('Content-Type', 'text/html');

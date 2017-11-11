@@ -81,4 +81,4 @@ GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
   return paragraphHTML;
 }
 
-module.exports.loremIpsum = loremIpsum;
+module.exports = loremIpsum;
