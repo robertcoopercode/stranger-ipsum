@@ -8,6 +8,18 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
+const full = window.location.host
+//window.location.host is subdomain.domain.com
+const parts = full.split('.')
+const sub = parts[0]
+const domain = parts[1]
+const type = parts[2]
+console.log(sub)
+console.log('domain: ', domain)
+//sub is 'subdomain', 'domain', type is 'com'
+// var newUrl = 'http://' + domain + '.' + type + '/your/other/path/' + subDomain
+// window.open(newUrl);
+
 // Location of the favicon in our directory
 const FAVICON = path.join(__dirname, 'favicon.ico');
 
