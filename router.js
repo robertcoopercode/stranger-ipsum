@@ -11,11 +11,12 @@ const router = express.Router();
 router.all('*', (request, response) => {
   const full = request.headers.host
   const parts = full.split('.')
-  const sub = parts[0]
-  const domain = parts[1]
-  const type = parts[2]
-  console.log(sub)
-  console.log('domain: ', domain)  
+  const subdomain = parts[0]
+  if (subdomain === 'lorem-ipsum') {
+    response.redirect('http://stranger-ipsum.robertcooper.me')
+  } else {
+    next()
+  }
 })
 
 // Location of the favicon in our directory
