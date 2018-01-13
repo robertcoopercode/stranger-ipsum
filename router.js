@@ -3,20 +3,21 @@ const loremIpsum = require("./generator.js");
 const querystring = require("querystring");
 const fs = require("fs");
 const path = require('path');
+const app = require('./app.js').app
 
 // Require express and create an express router object
 const express = require('express');
 const router = express.Router();
 
-router.all('*', (request, response) => {
-  const full = request.headers.host
-  const parts = full.split('.')
-  const subdomain = parts[0]
-  console.log(subdomain)
-  if (subdomain === 'lorem-ipsum') {
-    console.log('redirect required')
-    response.redirect('http://stranger-ipsum.robertcooper.me')
-  }
+app.all('*', (request, response, next) => {
+    const full = request.headers.host
+    const parts = full.split('.')
+    const subdomain = parts[0]
+    console.log(subdomain)
+    if (subdomain === 'lorem-ipsum') {
+        response.redirect('http://stranger-ipsum.robertcooper.me')
+    }
+    next()
 })
 
 // Location of the favicon in our directory
@@ -27,16 +28,6 @@ router.get('/favicon.ico', (request, response) => {
   response.setHeader('Content-Type', 'image/x-icon');
   let fileContents = fs.readFileSync(FAVICON);
   response.write(fileContents, {encoding: "utf8"});
-  response.end();
-});
-
-// Route that serves index.html
-router.get('/', (request, response) => {
-  response.setHeader('Content-Type', 'text/html');
-  // Capture the contents of index.html in a variable
-  let fileContents = fs.readFileSync("./public/index.html", {encoding: "utf8"});
-  // Send a response to the client with the index.html file
-  response.write(fileContents);
   response.end();
 });
 
