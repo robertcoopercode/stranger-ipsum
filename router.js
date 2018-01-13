@@ -13,7 +13,6 @@ app.all('*', (request, response, next) => {
     const full = request.headers.host
     const parts = full.split('.')
     const subdomain = parts[0]
-    console.log(subdomain)
     if (subdomain === 'lorem-ipsum') {
         response.redirect('http://stranger-ipsum.robertcooper.me')
     }
