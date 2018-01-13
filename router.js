@@ -12,10 +12,10 @@ router.all('*', (request, response) => {
   const full = request.headers.host
   const parts = full.split('.')
   const subdomain = parts[0]
+  console.log(subdomain)
   if (subdomain === 'lorem-ipsum') {
+    console.log('redirect required')
     response.redirect('http://stranger-ipsum.robertcooper.me')
-  } else {
-    next()
   }
 })
 
