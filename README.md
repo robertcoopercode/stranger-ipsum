@@ -8,9 +8,9 @@ Built a lorem ipsum generator that spits out Stranger Things quotes. It's built 
 
 Begin by running app.js in your terminal with the command `node app.js` and then access the application in your browser at *localhost:3000*.
 
-## Heroku App Deployment
+## Deployment
 
-In order to update the live application on Heroku, the command `git push heroku master` must be executed inside of the project folder.
+The repository is setup with continuous deployment with Heroku. Any commit pushed to master on Github will be deployed to the website.
 
 ## Credits
 - Used this [lorem ipsum generator](https://github.com/trohweder85/ipsum) to help with some of the JavaScript required to select random sentences.
