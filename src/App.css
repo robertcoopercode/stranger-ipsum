@@ -4,6 +4,7 @@
 
 body {
   color: #0D0630;
+  background-color: #000;
   text-align: center;
   margin: 40px auto;
   max-width: 800px;
@@ -98,7 +99,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding-top: 6px;
   padding-bottom: 6px;
   height: 37px;
-  transition: box-shadow 1s;
+  transition: box-shadow 500ms;
 }
 
 .paragraph-number:focus {
@@ -112,7 +113,11 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 6px 12px;
   background-color: #f61b1b;
   color: #fff;
-  transition: background-color 1s, color 1s, box-shadow 1s;
+  transition: background-color 500ms, color 500ms, box-shadow 500ms;
+}
+
+.copy-button:hover {
+    cursor: pointer;
 }
 
 .generate-button:hover,
@@ -160,7 +165,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #copyOverlay {
-  display: none;
   position: fixed;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -168,6 +172,18 @@ input[type=number]::-webkit-outer-spin-button {
   left: 0;
   height: 100vh;
   z-index: 100;
+  transition: opacity 1.5s linear;
+}
+
+.modal--show {
+    visibility: visible;
+    opacity: 0;
+}
+
+.modal--hidden {
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s 1.5s;
 }
 
 #copyText {
@@ -179,4 +195,9 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: 'Poppins';
   font-weight: bold;
   color: #fff;
+}
+
+.github-button-wrapper {
+    display: block;
+    margin-top: 2rem;
 }
